@@ -143,7 +143,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',  # Если доступ хотим открыть для всех то AllowAny или IsAuthenticated
+        'rest_framework.permissions.AllowAny',  # Если доступ хотим открыть для всех, то AllowAny или IsAuthenticated
     ],
 }
 SIMPLE_JWT = {
@@ -153,15 +153,11 @@ SIMPLE_JWT = {
 
 # Настройка CORS
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8000',  # Замените на адрес вашего фронтенд-сервера
-    "https://read-and-write.example.com",
+    "http://localhost:8000",  # Замените на адрес вашего фронтенд-сервера
 ]
-
 CSRF_TRUSTED_ORIGINS = [
-    "https://read-and-write.example.com",  # Замените на адрес вашего фронтенд-сервера
-    # и добавьте адрес бэкенд-сервера
+    "http://localhost:8000",  # адрес бэкенд-сервера
 ]
-
 CORS_ALLOW_ALL_ORIGINS = False
 
 # Настройки для Celery
@@ -171,7 +167,7 @@ CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
 # URL-адрес брокера результатов
 CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND')
 # Часовой пояс для работы Celery
-CELERY_TIMEZONE = 'Europe/Moscow'
+CELERY_TIMEZONE = TIME_ZONE
 # Флаг отслеживания выполнения задач
 CELERY_TASK_TRACK_STARTED = True
 # Максимальное время на выполнение задачи

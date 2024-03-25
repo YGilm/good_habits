@@ -20,6 +20,7 @@ class Habit(models.Model):
         verbose_name = 'Привычка'
         verbose_name_plural = 'Привычки'
         ordering = ('pk',)
+        db_table_comment = 'Таблица привычек пользователей'
 
     def __str__(self):
         return f'{self.action} в {self.location} в {self.time}'

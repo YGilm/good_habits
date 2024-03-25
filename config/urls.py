@@ -38,8 +38,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # apps
-    path('habits/', include('habits.urls', namespace='habits')),
-    path('users/', include('users.urls', namespace='users')),
+    path('', include('habits.urls', namespace='habits')),
+    path('', include('users.urls', namespace='users')),
 
     # documentation
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

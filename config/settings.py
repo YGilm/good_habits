@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': os.getenv('DATABASE_NAME'),
         'USER': os.getenv('DATABASE_USER'),
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
-        'HOST': os.getenv("DATABASE_HOST", 'localhost'),
+        'HOST': 'db',
         'PORT': os.getenv("DATABASE_PORT", '5432'),
     }
 }
@@ -163,9 +163,9 @@ CORS_ALLOW_ALL_ORIGINS = False
 # Настройки для Celery
 
 # URL-адрес брокера сообщений
-CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
+CELERY_BROKER_URL = 'redis://redis:6379/0'
 # URL-адрес брокера результатов
-CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND')
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
 # Часовой пояс для работы Celery
 CELERY_TIMEZONE = TIME_ZONE
 # Флаг отслеживания выполнения задач
